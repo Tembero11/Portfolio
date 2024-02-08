@@ -16,7 +16,23 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  }, {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `DM Sans`,
+            file: `https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&display=swap`,
+          },
+          {
+            name: `Inter`,
+            file: `https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap`,
+          },
+        ],
+      },
+    },]
 };
 
 export default config;
