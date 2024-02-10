@@ -7,13 +7,18 @@ $section-padding: 16px;
     flex-direction: column;
     &[data-direction=row] {
         flex-direction: row;
+        align-items: stretch;
+        gap: 32px;
+        div {
+            flex: 1;
+        }
     }
     align-items: start;
     justify-content: space-between;
 
     counter-increment: section;
 
-    min-height: calc(100vh - Layout.$navbar-height);
+    height: calc(100vh - Layout.$navbar-height);
     box-sizing: border-box;
     padding: $section-padding 0;
 
@@ -26,6 +31,7 @@ $section-padding: 16px;
 
     h1:first-child {
         margin-top: 0;
+        margin-bottom: 8px;
         &::before {
             display: block;
             font-size: 32px;
@@ -35,4 +41,17 @@ $section-padding: 16px;
         }
     }
     border-bottom: 1px dashed grey;
+}
+
+.subSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }

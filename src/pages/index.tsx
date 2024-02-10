@@ -2,6 +2,7 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import * as styles from "../styles/pages/index.module.scss"
+import Card from "../components/Card/Card"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -20,12 +21,21 @@ const IndexPage: React.FC<PageProps> = () => {
           <h1>Work Experience</h1>
           <p>This is some little speech about my work</p>
         </div>
-        <p>Here are gonna be some boxes</p>
       </section>
       {/* Tech */}
-      <section className={styles.section}>
-        <h1>Tech</h1>
-        <button>See More</button>
+      <section className={styles.section} data-direction="row">
+        <div className={styles.subSection}>
+          <div>
+          <h1>Tech</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed sem vulputate tellus efficitur feugiat. Fusce aliquam efficitur euismod. Vivamus molestie malesuada turpis, eu eleifend sapien posuere a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque sed erat vel ex commodo posuere non nec enim. In scelerisque nulla sed orci euismod tempus. Ut eu varius.</p>
+          </div>
+          <button>See More</button>
+        </div>
+        <div className={styles.cardGrid}>
+          {
+            new Array(9).fill(0).map(() => <Card><p>Testing</p></Card>)
+          }
+        </div>
       </section>
       {/* Projects */}
       <section className={styles.section}>
