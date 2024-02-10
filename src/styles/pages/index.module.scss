@@ -10,11 +10,29 @@ $section-padding: 16px;
     }
     align-items: start;
     justify-content: space-between;
+
+    counter-increment: section;
+
     min-height: calc(100vh - Layout.$navbar-height);
     box-sizing: border-box;
     padding: $section-padding 0;
 
+    &:first-child {
+        counter-reset: section;
+        h1:first-child::before {
+            display: none;
+        }
+    }
+
     h1:first-child {
         margin-top: 0;
-    }   
+        &::before {
+            display: block;
+            font-size: 32px;
+            color: var(--on-backgorund-sub);
+            content: "0" counter(section);
+            user-select: all;
+        }
+    }
+    border-bottom: 1px dashed grey;
 }
