@@ -1,6 +1,7 @@
 import React from "react";
 import * as styles from "./Layout.module.scss";
 import "../../styles/global.scss";
+import "../../styles/palette.scss";
 
 interface IProps {
     children: React.ReactNode;

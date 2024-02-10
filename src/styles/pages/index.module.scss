@@ -1,0 +1,20 @@
+@use "../../components/Layout/Layout.module.scss";
+
+$section-padding: 16px;
+
+.section {
+    display: flex;
+    flex-direction: column;
+    &[data-direction=row] {
+        flex-direction: row;
+    }
+    align-items: start;
+    justify-content: space-between;
+    min-height: calc(100vh - Layout.$navbar-height);
+    box-sizing: border-box;
+    padding: $section-padding 0;
+
+    h1:first-child {
+        margin-top: 0;
+    }   
+}

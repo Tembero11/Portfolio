@@ -30,22 +30,18 @@ $navbar-height: 65px;
             padding: 0;
             li {
                 list-style-type: none;
+                a {
+                    text-transform: capitalize;
+                }
             }
         }
     }
 
     main {
+        padding: 0 16px;
         flex: 1;
     }
 
     footer {
     }
-}
-
-.contact {
-    color: black;
-    background-color: #c09cfa;
-    padding: 8px;
-    cursor: pointer;
-    border: none;
 }
