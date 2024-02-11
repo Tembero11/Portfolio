@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import * as styles from "../styles/pages/index.module.scss"
 import Card from "../components/Card/Card"
+import ProjectCard from "../components/ProjectCard/ProjectCard"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -40,6 +41,7 @@ const IndexPage: React.FC<PageProps> = () => {
       {/* Projects */}
       <section className={styles.section}>
         <h1>Projects</h1>
+        <ProjectCard projectName={"Masa"} title={"Minecraft server management through Discord"} imageSrc={""} color={"red"} imageAlt={""}/>
       </section>
     </Layout>
   )
