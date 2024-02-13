@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import * as styles from "./Project.module.scss";
 
+import githubLogo from "../../assets/github-mark.svg";
+
 interface IProject {
     name: string;
     title: string;
+    desc: string;
     imageSrc: string;
     logoSrc: string;
     color: string;
+    repository?: string;
 }
 
 interface IProps {
@@ -30,7 +34,25 @@ export default function ProjectCard({ projects }: IProps) {
     return (
         <div className={styles.container} style={{"--theme": projects[currentProjectIndex].color} as React.CSSProperties}>
             <div className={styles.descContainer}>
-
+                {
+                    projects.map(({desc, repository}, index) => (
+                        <div className={styles.about} style={{transform: `translateX(${100 * index - currentProjectIndex * 100}%)`}}>
+                            <p className={styles.desc}>{desc}</p>
+                            <div>
+                                <h3>Tech used</h3>
+                            </div>
+                            <h3>Stats</h3>
+                            <div className={styles.stats}>
+                                <div className={styles.stat}>500+ commits</div>
+                                <div className={styles.stat}>1 star</div>
+                                <div className={styles.stat}>1 contributor</div>
+                            </div>
+                            {
+                                repository ? <a className={styles.repoLink} href={repository} target="_blank"><img src={githubLogo} width={28} alt="Github logo" /></a> : null
+                            }
+                        </div>
+                    ))
+                }
             </div>
             <div className={styles.carousel}>
                 <div className={styles.cards}>
@@ -57,9 +79,9 @@ export default function ProjectCard({ projects }: IProps) {
                 </div>
                 <div className={styles.timeline}>
                     {
-                        projects.map((_, index) => (
+                        projects.map(({ color }, index) => (
                             <div className={styles.timelineSection} style={{ "--time": "20%" } as React.CSSProperties}>
-                                <div></div>
+                                <div style={{backgroundColor: color}}></div>
                             </div>
                         ))
                     }

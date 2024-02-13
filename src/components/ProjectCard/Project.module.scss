@@ -2,8 +2,9 @@ $transition-timing-func: cubic-bezier(.7, 0, 0, 1);
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
-    width: 50%;
+    width: 60%;
 }
 
 .carousel {
@@ -11,15 +12,16 @@ $transition-timing-func: cubic-bezier(.7, 0, 0, 1);
     flex-direction: column;
     justify-content: stretch;
     gap: 16px;
-    background: black;
     flex: 3;
-    height: 400px;
+    height: 60vh;
 }
 
 .descContainer {
-    background: blue;
+    position: relative;
+    overflow: hidden;
     flex: 1;
-    height: inherit;
+    min-width: 270px;
+    min-height: 200px;
 }
 
 .timeline {
@@ -42,7 +44,6 @@ $transition-timing-func: cubic-bezier(.7, 0, 0, 1);
         div {
             width: var(--time);
             height: 100%;
-            background-color: red;
         }
 
         &:hover {
@@ -54,6 +55,7 @@ $transition-timing-func: cubic-bezier(.7, 0, 0, 1);
 .cards {
     position: relative;
     flex: 1;
+    min-width: 500px;
     box-shadow: 14px 14px 28px #bebebe,
         -14px -14px 28px #ffffff;
     border-radius: 16px;
@@ -142,6 +144,41 @@ $transition-timing-func: cubic-bezier(.7, 0, 0, 1);
 
 .action, .title {
     transform: translateY(40px);
+}
+
+.about {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 700ms $transition-timing-func;
+
+    .desc {
+        margin: 0;
+    }
+
+    .repoLink {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        &:hover {
+            filter: brightness(1.5);
+        }
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .stat:nth-child(odd) {
+            border-right: 1px solid gray;
+        }
+        .stat {
+            padding: 8px;
+        }
+    }
 }
 
 // If the device cannot hover disable the hover animation
