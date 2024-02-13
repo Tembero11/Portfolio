@@ -41,7 +41,29 @@ const IndexPage: React.FC<PageProps> = () => {
       {/* Projects */}
       <section className={styles.section}>
         <h1>Projects</h1>
-        <ProjectCard projectName={"Masa"} title={"Minecraft server management through Discord"} imageSrc={""} color={"red"} imageAlt={""}/>
+          <ProjectCard projects={[
+            {
+              name: "",
+              title: "",
+              imageSrc: "https://www.minecraft.net/content/dam/games/minecraft/key-art/Vanilla-PMP_Collection-Carousel-0_Buzzy-Bees_1280x768.jpg",
+              logoSrc: "",
+              color: "red",
+            },
+            {
+              name: "",
+              title: "",
+              imageSrc: "https://womensfitness.co.uk/wp-content/uploads/sites/3/2022/11/Shutterstock_1675475479.jpg",
+              logoSrc: "",
+              color: "blue",
+            },
+            {
+              name: "",
+              title: "",
+              imageSrc: "https://images.ctfassets.net/mrop88jh71hl/1GlQXrW5HeOyJwrV1VCgYo/ba5e654988b6fb5823cf72e3e189239d/html-css-coding-languages-for-kids.jpg?w=1280&h=718&fl=progressive&q=100&fm=jpg",
+              logoSrc: "",
+              color: "green",
+            }
+          ]}/>
       </section>
     </Layout>
   )
